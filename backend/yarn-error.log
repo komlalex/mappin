@@ -1,0 +1,38 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add express dotenv cors color mongoose
+
+PATH: 
+  C:\Python311\Scripts\;C:\Python311\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-17\bin\;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\6.0\bin;C:\Users\user\AppData\Local\Programs\mongosh;C:\Program Files\MongoDB Compass;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\user\AppData\Local\Programs\mongosh\;C:\Users\user\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Kunyelewosi Alexander",
+    "license": "MIT",
+    "type": "module",
+    "exports": "./index.js",
+    "engines": {
+      "node": ">=16"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
