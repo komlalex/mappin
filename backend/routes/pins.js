@@ -1,10 +1,11 @@
 import express from "express";
 import Pin from "../models/Pin.js";
+import { authenticate } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
 // Create a pin
-router.post("/", async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
     const {username, title, desc, rating, lat, lon} = req.body;
 
     // Ensure all required fields are provided
@@ -23,7 +24,7 @@ router.post("/", async (req, res) => {
  })
      
 //Get all pins
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
     try {
         const pins = await Pin.find();
         res.status(200).json(pins);

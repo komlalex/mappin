@@ -7,8 +7,8 @@ const authenticate = async (req, res, next) => {
 
     if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
         try {
-            token = req.authorization.split(" ")[1];
-            const decoded = jwt.verify(token);
+            token = req.headers.authorization.split(" ")[1];
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
             //Get user
             const user = await User.findById(decoded.id).select("-password");
@@ -23,5 +23,11 @@ const authenticate = async (req, res, next) => {
             });
         }
         
+    } 
+
+    if (!token) {
+        res.status(401).json("Unauthorized. Please log in first.")
     }
 }
+
+export {authenticate};
