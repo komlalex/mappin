@@ -1,10 +1,11 @@
 import express from "express";
 import "colors";
 import  connectDB from "./config/db.js";
-import errorHandler from "./middlewares/errorMiddleware.js";
+//import errorHandler from "./middlewares/errorMiddleware.js";
 import dotenv from "dotenv";
 import cors from "cors";
 import pinsRouter from "./routes/pins.js";
+import usersRouter from "./routes/users.js";
 
 //Configure environment variables
 dotenv.config()
@@ -24,6 +25,8 @@ app.use(cors())
 
 // Access the pins router
 app.use("/api/pins", pinsRouter);
+// Aceess the users router
+app.use("/api/users", usersRouter)
 
 //Handle Errors
 //app.use(errorHandler);
