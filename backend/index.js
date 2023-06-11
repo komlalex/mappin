@@ -3,6 +3,8 @@ import "colors";
 import  connectDB from "./config/db.js";
 import errorHandler from "./middlewares/errorMiddleware.js";
 import dotenv from "dotenv";
+import cors from "cors";
+import pinsRouter from "./routes/pins.js";
 
 //Configure environment variables
 dotenv.config()
@@ -15,9 +17,16 @@ connectDB()
 
 //Enable json
 app.use(express.json());
+// Enable cors
+app.use(cors())
+
+
+
+// Access the pins router
+app.use("/api/pins", pinsRouter);
 
 //Handle Errors
-app.use(errorHandler);
+//app.use(errorHandler);
 
 const port = process.env.PORT || 2023;
 app.listen(port, () => {
