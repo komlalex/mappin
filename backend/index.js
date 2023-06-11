@@ -4,7 +4,7 @@ import  connectDB from "./config/db.js";
 import errorHandler from "./middlewares/errorMiddleware.js";
 import dotenv from "dotenv";
 
-//Enable environment variables
+//Configure environment variables
 dotenv.config()
 
 // Initialize application
