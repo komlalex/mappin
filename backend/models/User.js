@@ -15,3 +15,5 @@ const userSchema = new Schema({
         min: 6
     }
 }, {timestamps: true})
+
+export default mongoose.model("User", userSchema);
